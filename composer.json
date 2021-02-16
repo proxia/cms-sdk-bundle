@@ -1,0 +1,29 @@
+{
+  "name": "proxia/cms-sdk",
+  "description": "Proxia.CMS SDK Symfony bundle",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.4",
+    "ext-ctype": "*",
+    "symfony/orm-pack": "^2.0"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Proxia\\Cms\\": ""
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Proxia\\Cms\\Tests\\": "tests/"
+    }
+  }
+}

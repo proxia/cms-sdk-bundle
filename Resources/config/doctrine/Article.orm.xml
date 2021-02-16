@@ -1,0 +1,30 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Proxia\Cms\Entity\Article" table="articles">
+        <id name="id" type="integer"/>
+
+        <field name="authorId" column="author_id" type="integer"/>
+        <field name="updateAuthors" column="update_authors"/>
+        <field name="createdAt" column="creation" type="datetime_immutable"/>
+        <field name="isPublished" column="is_published" type="boolean"/>
+        <field name="isTrash" column="is_trash" type="boolean"/>
+        <field name="isArchive" column="is_archive" type="boolean"/>
+        <field name="access" type="integer"/>
+        <field name="accessGroups" column="access_groups"/>
+        <field name="editors"/>
+        <field name="editorGroups" column="editors_groups"/>
+        <field name="expiresAt" column="expiration" type="datetime"/>
+        <field name="image"/>
+        <field name="mapImage" column="map_image"/>
+        <field name="mapAreaShape" column="map_area_shape"/>
+        <field name="mapAreaCoordinates" column="map_area_coordinates"/>
+        <field name="isNews" column="is_news" type="boolean"/>
+        <field name="isFlashNews" column="is_flash_news" type="boolean"/>
+        <field name="showFullVersionOnFrontpage" column="frontpage_show_full_version"/>
+        <field name="usableBy" column="usable_by" type="integer"/>
+
+        <one-to-many field="translations" target-entity="Proxia\Cms\Entity\ArticleTranslation" mapped-by="article"/>
+    </entity>
+</doctrine-mapping>
