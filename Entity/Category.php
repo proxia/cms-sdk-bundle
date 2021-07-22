@@ -7,31 +7,24 @@ use DateTime;
 use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 
-class Article
+class Category
 {
     private int $id;
     private int $authorId;
-    private string $updateAuthors;
     private DateTimeImmutable $createdAt;
     private bool $isPublished;
     private bool $isTrash;
-    private bool $isArchive;
     private int $access;
     private string $accessGroups;
     private string $editors;
-    private string $editorGroups;
-    private DateTime $expiresAt;
     private string $image;
     private string $mapImage;
     private string $mapAreaShape;
     private string $mapAreaCoordinates;
-    private bool $isNews;
-    private bool $isFlashNews;
-    private bool $showFullVersionOnFrontpage;
     private int $usableBy;
 
     /**
-     * @var ArticleTranslation[]|ArrayCollection
+     * @var CategoryTranslation[]|ArrayCollection
      */
     private $translations;
 
@@ -50,11 +43,6 @@ class Article
         return $this->authorId;
     }
 
-    public function getUpdateAuthors(): string
-    {
-        return $this->updateAuthors;
-    }
-
     public function getCreatedAt(): DateTimeImmutable
     {
         return $this->createdAt;
@@ -68,11 +56,6 @@ class Article
     public function isTrash(): bool
     {
         return $this->isTrash;
-    }
-
-    public function isArchive(): bool
-    {
-        return $this->isArchive;
     }
 
     public function getAccess(): int
@@ -90,22 +73,9 @@ class Article
         return $this->editors;
     }
 
-    public function getEditorGroups(): string
-    {
-        return $this->editorGroups;
-    }
-
-    public function getExpiresAt(): DateTime
-    {
-        return $this->expiresAt;
-    }
-
     public function getImage(): string
     {
-        if( isset($this->image) )
-            return $this->image;
-        else
-            return "";
+        return $this->image;
     }
 
     public function getMapImage(): string
@@ -123,21 +93,6 @@ class Article
         return $this->mapAreaCoordinates;
     }
 
-    public function isNews(): bool
-    {
-        return $this->isNews;
-    }
-
-    public function isFlashNews(): bool
-    {
-        return $this->isFlashNews;
-    }
-
-    public function isShowFullVersionOnFrontpage(): bool
-    {
-        return $this->showFullVersionOnFrontpage;
-    }
-
     public function getUsableBy(): int
     {
         return $this->usableBy;
@@ -146,7 +101,7 @@ class Article
     public function getTranslation(Language $language)
     {
         return $this->translations
-            ->filter(fn(ArticleTranslation $t) => $t->getLanguage() === $language->getCode())
+            ->filter(fn(CategoryTranslation $t) => $t->getLanguage() === $language->getCode())
             ->first();
     }
 }

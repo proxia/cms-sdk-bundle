@@ -3,15 +3,19 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services
         https://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <defaults public="false" />
+        <defaults public="false"/>
 
         <service id="proxia_cms.repository.article" class="Proxia\Cms\Repository\ArticleRepository" public="true">
-            <argument type="service" id="doctrine.orm.default_entity_manager" />
+            <argument type="service" id="doctrine.orm.default_entity_manager"/>
+        </service>
+        <service id="proxia_cms.repository.category" class="Proxia\Cms\Repository\CategoryRepository" public="true">
+            <argument type="service" id="doctrine.orm.default_entity_manager"/>
         </service>
         <service id="proxia_cms.repository.language" class="Proxia\Cms\Repository\LanguageRepository" public="true">
-            <argument type="service" id="doctrine.orm.default_entity_manager" />
+            <argument type="service" id="doctrine.orm.default_entity_manager"/>
         </service>
         <service id="Proxia\Cms\Repository\ArticleRepository" alias="proxia_cms.repository.article"/>
+        <service id="Proxia\Cms\Repository\CategoryRepository" alias="proxia_cms.repository.category"/>
         <service id="Proxia\Cms\Repository\LanguageRepository" alias="proxia_cms.repository.language"/>
     </services>
 </container>
