@@ -2,7 +2,7 @@
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-    <entity name="Proxia\Cms\Entity\Category" table="categories">
+    <entity name="Proxia\CmsBundle\Entity\Category" table="categories">
         <id name="id" type="integer"/>
 
         <field name="authorId" column="author_id" type="integer"/>
@@ -18,6 +18,6 @@
         <field name="mapAreaCoordinates" column="map_area_coordinates"/>
         <field name="usableBy" column="usable_by" type="integer"/>
 
-        <one-to-many field="translations" target-entity="Proxia\Cms\Entity\CategoryTranslation" mapped-by="category"/>
+        <one-to-many field="translations" target-entity="Proxia\CmsBundle\Entity\CategoryTranslation" mapped-by="category"/>
     </entity>
 </doctrine-mapping>

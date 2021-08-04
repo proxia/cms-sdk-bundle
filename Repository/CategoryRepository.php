@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Proxia\Cms\Repository;
+namespace Proxia\CmsBundle\Repository;
 
 use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\FetchMode;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectRepository;
-use Proxia\Cms\Entity\Article;
-use Proxia\Cms\Entity\Category;
-use Proxia\Cms\Entity\Language;
+use Proxia\CmsBundle\Entity\Article;
+use Proxia\CmsBundle\Entity\Category;
+use Proxia\CmsBundle\Entity\Language;
 
 final class CategoryRepository
 {

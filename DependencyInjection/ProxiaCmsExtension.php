@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Proxia\Cms\DependencyInjection;
+namespace Proxia\CmsBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

@@ -2,7 +2,7 @@
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-    <entity name="Proxia\Cms\Entity\Article" table="articles">
+    <entity name="Proxia\CmsBundle\Entity\Article" table="articles">
         <id name="id" type="integer"/>
 
         <field name="authorId" column="author_id" type="integer"/>
@@ -25,6 +25,6 @@
         <field name="showFullVersionOnFrontpage" column="frontpage_show_full_version"/>
         <field name="usableBy" column="usable_by" type="integer"/>
 
-        <one-to-many field="translations" target-entity="Proxia\Cms\Entity\ArticleTranslation" mapped-by="article"/>
+        <one-to-many field="translations" target-entity="Proxia\CmsBundle\Entity\ArticleTranslation" mapped-by="article"/>
     </entity>
 </doctrine-mapping>

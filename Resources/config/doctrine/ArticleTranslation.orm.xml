@@ -2,7 +2,7 @@
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-    <entity name="Proxia\Cms\Entity\ArticleTranslation" table="articles_lang">
+    <entity name="Proxia\CmsBundle\Entity\ArticleTranslation" table="articles_lang">
         <id name="article" association-key="true"/>
         <id name="language" type="string"/>
 
@@ -13,7 +13,7 @@
         <field name="isTranslationVisible" column="language_is_visible" type="boolean"/>
         <field name="isTranslationVisibleOnFrontpage" column="frontpage_language_is_visible" type="boolean"/>
 
-        <many-to-one field="article" inversed-by="translations" target-entity="Proxia\Cms\Entity\Article">
+        <many-to-one field="article" inversed-by="translations" target-entity="Proxia\CmsBundle\Entity\Article">
             <join-column name="article_id"/>
         </many-to-one>
     </entity>
